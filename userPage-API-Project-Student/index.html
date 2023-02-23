@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>API Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="user-container"></div>
+      <script id="user-template" type="text/x-handlebars-template">
+        <img src={{Picture}} id="profile-pic" />
+        <br />
+        <p class="user-info">{{FirstName}} {{LastName}}</p><br />
+        <p class="user-info">{{city}} , {{state}}</p>
+      </script>
+
+      <div class="quote-container">
+        <script id="quote-template" type="text/x-handlebars-template">
+          <p>favorite quote:</p>
+          <div> <br /> {{quote}} </div>
+        </script>
+      </div>
+
+      <div class="content-container">
+        <script id="meat-template" type="text/x-handlebars-template">
+          <p>about me : </p>
+          <div class="meat-text">{{text}}</div>
+        </script>
+
+        <div class="pokemon-container">
+          <script id="pokemon-template" type="text/x-handlebars-template">
+            <img src="{{pokemonPicture}}" /><p>favorite pokemon :
+              {{pokemonName}}</p>
+          </script>
+        </div>
+
+        <div class="meat-container"></div>
+      </div>
+      <div class="friends">
+        <h4>Friends</h4>
+        <div class="friends-container">
+          <script id="friends-template" type="text/x-handlebars-template">
+            <ul>
+              {{#each friends}}
+                <div>{{firstName}} {{lastName}}</div>
+              {{/each}}
+
+            </ul>
+          </script>
+        </div>
+      </div>
+      <div class="buttons">
+        <button id="load">Load User Data</button>
+        <button id="display">Display User</button>
+      </div>
+    </div>
+
+    <script src="APIManager.js"></script>
+
+    <script src="Renderer.js"></script>
+
+    <script src="main.js"></script>
+  </body>
+</html>
